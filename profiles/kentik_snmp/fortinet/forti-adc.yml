@@ -1,0 +1,419 @@
+# http://www.circitor.fr/Mibs/Html/F/FORTINET-FORTIADC-MIB.php
+---
+extends:
+  - if-mib.yml
+  - system-mib.yml
+
+provider: kentik-appliance
+
+sysobjectid:
+  - 1.3.6.1.4.1.12356.112.*        #  Fortinet ADC
+  - 1.3.6.1.4.1.12356.112.100.30   #  fadcVM
+
+metrics:
+  - MIB: 
+    table:
+      # 
+      OID: 
+      name: 
+    symbols:
+      # 
+      - name: 
+        OID: 
+    metric_tags:
+      # 
+      - column:
+          name: 
+          OID: 
+
+metric_tags:
+  # 
+  - column:
+    tag: serial_number
+      name: 	
+      OID: 
+
+
+fadcSysModel	1.3.6.1.4.1.12356.112.1.1
+System model string.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString	Size(0..64)	 
+
+fadcSysSerial	1.3.6.1.4.1.12356.112.1.2
+Device serial number.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString	Size(0..32)	 
+
+fadcSysVersion	1.3.6.1.4.1.12356.112.1.3
+Device firmware version.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString	Size(0..128)	 
+
+fadcSysCpuUsage	1.3.6.1.4.1.12356.112.1.4
+Instantaneous CPU usage.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Gauge32		 
+
+fadcSysMemUsage	1.3.6.1.4.1.12356.112.1.5
+Instantaneous memory utilization.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Gauge32		 
+
+fadcSysLogDiskUsage	1.3.6.1.4.1.12356.112.1.6
+Instantaneous log disk usage.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Gauge32		 
+
+fadcSysLoad	1.3.6.1.4.1.12356.112.1.30
+Instantaneous system load.
+
+
+
+fadcHAMode	1.3.6.1.4.1.12356.112.1.200.1
+[Discard] High-availability mode (Standalone, Active-Active, Active-Active-Vrrp or Active-Passive).
+
+
+
+fadcVSTable	1.3.6.1.4.1.12356.112.3.2
+A table of virtual servers on the device. This table is intended to be extended with platform specific information.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	SEQUENCE OF		 
+ 	 	FadcVSEntry	
+
+fadcVSEntry	1.3.6.1.4.1.12356.112.3.2.1
+An entry containing information applicable to a particular virtual server.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	FadcVSEntry		 
+
+fadcVSIndex	1.3.6.1.4.1.12356.112.3.2.1.1
+An index uniquely defining a virtual server within the fadcVSTable.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	Integer32	1..2147483647	 
+
+fadcVSName	1.3.6.1.4.1.12356.112.3.2.1.2
+The server name of the specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString		 
+
+fadcVSStatus	1.3.6.1.4.1.12356.112.3.2.1.3
+The configuration status of specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString		 
+
+fadcVSHealth	1.3.6.1.4.1.12356.112.3.2.1.4
+The health of specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString		 
+
+fadcVSNewConnections	1.3.6.1.4.1.12356.112.3.2.1.5
+New Connections persecond rate for the specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Integer32	1..2147483647	 
+
+fadcVSConcurrent	1.3.6.1.4.1.12356.112.3.2.1.6
+Concurrent connection rate for the specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Integer32	1..2147483647	 
+
+fadcVSThroughputKbps	1.3.6.1.4.1.12356.112.3.2.1.7
+Throughput bps rate for the specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Integer32	1..2147483647	 
+
+fadcVSVdom	1.3.6.1.4.1.12356.112.3.2.1.8
+The virtual domian of the specified virtual server.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString		 
+
+fadcVdInfo	1.3.6.1.4.1.12356.112.2.1
+OBJECT IDENTIFIER		 	 
+
+fadcVdNumber	1.3.6.1.4.1.12356.112.2.1.1
+The number of virtual domains in vdTable.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Integer32		 
+
+fadcVdMaxVdoms	1.3.6.1.4.1.12356.112.2.1.2
+The maximum number of virtual domains allowed on the device as allowed by hardware and/or licensing.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	Integer32		 
+
+fadcVdEnabled	1.3.6.1.4.1.12356.112.2.1.3
+Whether virtual domains are enabled on this device.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	FnBoolState		 
+
+fadcVdTables	1.3.6.1.4.1.12356.112.2.2
+OBJECT IDENTIFIER		 	 
+
+fadcVdTable	1.3.6.1.4.1.12356.112.2.2.1
+A table of virtual domains configured on the device.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	SEQUENCE OF		 
+ 	 	FadcVdEntry	
+
+fadcVdEntry	1.3.6.1.4.1.12356.112.2.2.1.1
+An entry containing information applicable to a particular virtual domain.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	FadcVdEntry		 
+
+fadcVdEntIndex	1.3.6.1.4.1.12356.112.2.2.1.1.1
+Internal virtual domain index used to uniquely identify rows in this table. This index is also used by other tables referencing a virtual domain.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	FadcVdIndex		 
+
+fadcVdEntName	1.3.6.1.4.1.12356.112.2.2.1.1.2
+The name of the virtual domain.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString		 
+
+fadcVdEntHaState	1.3.6.1.4.1.12356.112.2.2.1.1.3
+HA cluster member state of the virtual domain on this device (master, backup or standalone).
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	FadcHaState		 
+
+fadcIntfTable	1.3.6.1.4.1.12356.112.4.1
+Fortinet specific extensions to MIB-2 ifTable.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	SEQUENCE OF		 
+ 	 	FadcIntfEntry	
+
+fadcIntfEntry	1.3.6.1.4.1.12356.112.4.1.1
+Fortinet specific information about an ifEntry. This table augments the standard ifTable, so the same indexing is used.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	FadcIntfEntry		 
+
+fadcIntfIndex	1.3.6.1.4.1.12356.112.4.1.1.1
+Interface index used to uniquely identify rows in this table. This index is also used by other tables referencing a virtual domain.
+Status: current	Access: not-accessible
+OBJECT-TYPE		 	 
+ 	Integer32	1..2147483647	 
+
+fadcIntfName	1.3.6.1.4.1.12356.112.4.1.1.2
+The name of interface.
+Status: current	Access: read-only
+OBJECT-TYPE		 	 
+ 	DisplayString		 
+
+fadcIntfVdom	1.3.6.1.4.1.12356.112.4.1.1.3
+The virtual domain the interface belongs to. This index corresponds to the index used by fadcVdTable.
+
+ fadcVirtualDomain		.1.3.6.1.4.1.12356.112.2
+ fadcVdInfo		.1.3.6.1.4.1.12356.112.2.1
+ fadcVdNumber 		.1.3.6.1.4.1.12356.112.2.1.1
+ fadcVdMaxVdoms 		.1.3.6.1.4.1.12356.112.2.1.2
+ fadcVdEnabled 		.1.3.6.1.4.1.12356.112.2.1.3
+ fadcVdTables		.1.3.6.1.4.1.12356.112.2.2
+ fadcVdTable 		.1.3.6.1.4.1.12356.112.2.2.1
+ fadcVdEntry 		.1.3.6.1.4.1.12356.112.2.2.1.1
+ fadcVdEntIndex 		.1.3.6.1.4.1.12356.112.2.2.1.1.1
+ fadcVdEntName 		.1.3.6.1.4.1.12356.112.2.2.1.1.2
+ fadcVdEntHaState 		.1.3.6.1.4.1.12356.112.2.2.1.1.3
+ fadcVirtualServer		.1.3.6.1.4.1.12356.112.3
+ fadcVSNumber 		.1.3.6.1.4.1.12356.112.3.1
+ fadcVSTable 		.1.3.6.1.4.1.12356.112.3.2
+ fadcVSEntry 		.1.3.6.1.4.1.12356.112.3.2.1
+ fadcVSIndex 		.1.3.6.1.4.1.12356.112.3.2.1.1
+ fadcVSName 		.1.3.6.1.4.1.12356.112.3.2.1.2
+ fadcVSStatus 		.1.3.6.1.4.1.12356.112.3.2.1.3
+ fadcVSHealth 		.1.3.6.1.4.1.12356.112.3.2.1.4
+ fadcVSNewConnections 		.1.3.6.1.4.1.12356.112.3.2.1.5
+ fadcVSConcurrent 		.1.3.6.1.4.1.12356.112.3.2.1.6
+ fadcVSThroughputKbps 		.1.3.6.1.4.1.12356.112.3.2.1.7
+ fadcVSVdom 		.1.3.6.1.4.1.12356.112.3.2.1.8
+ fadcIntf		.1.3.6.1.4.1.12356.112.4
+ fadcIntfTable 		.1.3.6.1.4.1.12356.112.4.1
+ fadcIntfEntry 		.1.3.6.1.4.1.12356.112.4.1.1
+ fadcIntfIndex 		.1.3.6.1.4.1.12356.112.4.1.1.1
+ fadcIntfName 		.1.3.6.1.4.1.12356.112.4.1.1.2
+ fadcIntfVdom 		.1.3.6.1.4.1.12356.112.4.1.1.3
+ fadcAdmin		.1.3.6.1.4.1.12356.112.5
+ fadcAdminTable 		.1.3.6.1.4.1.12356.112.5.1
+ fadcAdminEntry 		.1.3.6.1.4.1.12356.112.5.1.1
+ fadcAdminIndex 		.1.3.6.1.4.1.12356.112.5.1.1.1
+ fadcAdminName 		.1.3.6.1.4.1.12356.112.5.1.1.2
+ fadcAdminVdom 		.1.3.6.1.4.1.12356.112.5.1.1.3
+ fadcHardware		.1.3.6.1.4.1.12356.112.6
+ fadcCPUInfo		.1.3.6.1.4.1.12356.112.6.1
+ fadcCPUTable 		.1.3.6.1.4.1.12356.112.6.1.1
+ fadcCPUEntry 		.1.3.6.1.4.1.12356.112.6.1.1.1
+ fadcCPUIndex 		.1.3.6.1.4.1.12356.112.6.1.1.1.1
+ fadcCPUName 		.1.3.6.1.4.1.12356.112.6.1.1.1.2
+ fadcCPUTemp 		.1.3.6.1.4.1.12356.112.6.1.1.1.3
+ fadcPSUInfo		.1.3.6.1.4.1.12356.112.6.2
+ fadcPSUTable 		.1.3.6.1.4.1.12356.112.6.2.1
+ fadcPSUEntry 		.1.3.6.1.4.1.12356.112.6.2.1.1
+ fadcPSUIndex 		.1.3.6.1.4.1.12356.112.6.2.1.1.1
+ fadcPSUName 		.1.3.6.1.4.1.12356.112.6.2.1.1.2
+ fadcPSUTemp 		.1.3.6.1.4.1.12356.112.6.2.1.1.3
+ fadcPSUFanSpeed 		.1.3.6.1.4.1.12356.112.6.2.1.1.4
+ fadcPSUFanStatus 		.1.3.6.1.4.1.12356.112.6.2.1.1.5
+ fadcPSUVoltage 		.1.3.6.1.4.1.12356.112.6.2.1.1.6
+ fadcPSUStatus 		.1.3.6.1.4.1.12356.112.6.2.1.1.7
+ fadcNetworkInfo		.1.3.6.1.4.1.12356.112.6.3
+ fadcNetworkTable 		.1.3.6.1.4.1.12356.112.6.3.1
+ fadcNetworkEntry 		.1.3.6.1.4.1.12356.112.6.3.1.1
+ fadcNetworkIndex 		.1.3.6.1.4.1.12356.112.6.3.1.1.1
+ fadcPortLinkName 		.1.3.6.1.4.1.12356.112.6.3.1.1.2
+ fadcPortLinkStatus 		.1.3.6.1.4.1.12356.112.6.3.1.1.3
+ fadcDeviceInfo		.1.3.6.1.4.1.12356.112.6.4
+ fadcDeviceTempTables		.1.3.6.1.4.1.12356.112.6.4.1
+ fadcDeviceTempTable 		.1.3.6.1.4.1.12356.112.6.4.1.1
+ fadcDeviceTempEntry 		.1.3.6.1.4.1.12356.112.6.4.1.1.1
+ fadcDeviceTempIndex 		.1.3.6.1.4.1.12356.112.6.4.1.1.1.1
+ fadcDeviceTempName 		.1.3.6.1.4.1.12356.112.6.4.1.1.1.2
+ fadcDeviceTempValue 		.1.3.6.1.4.1.12356.112.6.4.1.1.1.3
+ fadcDeviceFanTables		.1.3.6.1.4.1.12356.112.6.4.2
+ fadcDeviceFanTable 		.1.3.6.1.4.1.12356.112.6.4.2.1
+ fadcDeviceFanEntry 		.1.3.6.1.4.1.12356.112.6.4.2.1.1
+ fadcDeviceFanIndex 		.1.3.6.1.4.1.12356.112.6.4.2.1.1.1
+ fadcDeviceFanName 		.1.3.6.1.4.1.12356.112.6.4.2.1.1.2
+ fadcDeviceFanSpeed 		.1.3.6.1.4.1.12356.112.6.4.2.1.1.3
+ fadcDeviceFanStatus 		.1.3.6.1.4.1.12356.112.6.4.2.1.1.4
+ fadcHA		.1.3.6.1.4.1.12356.112.6.5
+ fadcHACurMode 		.1.3.6.1.4.1.12356.112.6.5.1
+ fadcHACurState 		.1.3.6.1.4.1.12356.112.6.5.2
+ fadcSyncStats		.1.3.6.1.4.1.12356.112.6.5.20
+ fadcHASyncStatsTable 		.1.3.6.1.4.1.12356.112.6.5.20.1
+ fadcHASyncStatsEntry 		.1.3.6.1.4.1.12356.112.6.5.20.1.1
+ fadcSyncTypeIndex 		.1.3.6.1.4.1.12356.112.6.5.20.1.1.1
+ fadcSyncType 		.1.3.6.1.4.1.12356.112.6.5.20.1.1.2
+ fadcSyncSent 		.1.3.6.1.4.1.12356.112.6.5.20.1.1.3
+ fadcSyncReceived 		.1.3.6.1.4.1.12356.112.6.5.20.1.1.4
+ fadcDeviceErrCount		.1.3.6.1.4.1.12356.112.6.5.21
+ fadcDuplicateNodeID 		.1.3.6.1.4.1.12356.112.6.5.21.1
+ fadcVersionMismatch 		.1.3.6.1.4.1.12356.112.6.5.21.2
+ fadcHAPeerInfo		.1.3.6.1.4.1.12356.112.6.5.22
+ fadcHAPeerTable 		.1.3.6.1.4.1.12356.112.6.5.22.1
+ fadcHAPeerEntry 		.1.3.6.1.4.1.12356.112.6.5.22.1.1
+ fadcPeerIndex 		.1.3.6.1.4.1.12356.112.6.5.22.1.1.1
+ fadcPeerSerialNumber 		.1.3.6.1.4.1.12356.112.6.5.22.1.1.2
+ fadcPeerStatus 		.1.3.6.1.4.1.12356.112.6.5.22.1.1.3
+ fadcNodeID 		.1.3.6.1.4.1.12356.112.6.5.22.1.1.4
+ fadcIPAddress 		.1.3.6.1.4.1.12356.112.6.5.22.1.1.5
+ fadcHAPeerCount 		.1.3.6.1.4.1.12356.112.6.5.3
+ fadcMoniterIntfCount 		.1.3.6.1.4.1.12356.112.6.5.4
+ fadcDiskState 		.1.3.6.1.4.1.12356.112.6.5.5
+ fadcHALastChangedTime 		.1.3.6.1.4.1.12356.112.6.5.6
+ fadcHALastChangedReason 		.1.3.6.1.4.1.12356.112.6.5.7
+ fadcVoltage 		.1.3.6.1.4.1.12356.112.6.6
+ fadcPowerSupplyVoltage 		.1.3.6.1.4.1.12356.112.6.7
+ fadcLogDiskStatus 		.1.3.6.1.4.1.12356.112.6.8
+ fadcMIBConformance		.1.3.6.1.4.1.12356.112.600
+ fadcSecurity		.1.3.6.1.4.1.12356.112.7
+ fadcDDoSAttackStatus 		.1.3.6.1.4.1.12356.112.7.1
+ fadcApplication		.1.3.6.1.4.1.12356.112.8
+ fadcRS		.1.3.6.1.4.1.12356.112.8.1
+ fadcPoolNumber 		.1.3.6.1.4.1.12356.112.8.1.1
+ fadcRSNumber 		.1.3.6.1.4.1.12356.112.8.1.2
+ fadcRSTable 		.1.3.6.1.4.1.12356.112.8.1.3
+ fadcRSEntry 		.1.3.6.1.4.1.12356.112.8.1.3.1
+ fadcRSIndex 		.1.3.6.1.4.1.12356.112.8.1.3.1.1
+ fadcPoolName 		.1.3.6.1.4.1.12356.112.8.1.3.1.2
+ fadcRSStatus 		.1.3.6.1.4.1.12356.112.8.1.3.1.3
+ fadcRSHealth 		.1.3.6.1.4.1.12356.112.8.1.3.1.4
+ fadcRSVdom 		.1.3.6.1.4.1.12356.112.8.1.3.1.5
+ fadcVS		.1.3.6.1.4.1.12356.112.8.2
+ fadcVirturalServerNumber 		.1.3.6.1.4.1.12356.112.8.2.1
+ fadcVirturalServerTable 		.1.3.6.1.4.1.12356.112.8.2.2
+ fadcVirturalServerEntry 		.1.3.6.1.4.1.12356.112.8.2.2.1
+ fadcVirturalServerIndex 		.1.3.6.1.4.1.12356.112.8.2.2.1.1
+ fadcVirturalServerName 		.1.3.6.1.4.1.12356.112.8.2.2.1.2
+ fadcVirturalServerStatus 		.1.3.6.1.4.1.12356.112.8.2.2.1.3
+ fadcVirturalServerHealth 		.1.3.6.1.4.1.12356.112.8.2.2.1.4
+ fadcVirturalServerNewConnections 		.1.3.6.1.4.1.12356.112.8.2.2.1.5
+ fadcVirturalServerConcurrent 		.1.3.6.1.4.1.12356.112.8.2.2.1.6
+ fadcVirturalServerThroughputKbps 		.1.3.6.1.4.1.12356.112.8.2.2.1.7
+ fadcVirturalServerVdom 		.1.3.6.1.4.1.12356.112.8.2.2.1.8
+ fadcVirturalServerWAF 		.1.3.6.1.4.1.12356.112.8.2.2.1.9
+ fadcLinkLoadBalance		.1.3.6.1.4.1.12356.112.8.3
+ fadcGatewayTables		.1.3.6.1.4.1.12356.112.8.3.1
+ fadcGatewayTable 		.1.3.6.1.4.1.12356.112.8.3.1.1
+ fadcGatewayEntry 		.1.3.6.1.4.1.12356.112.8.3.1.1.1
+ fadcGatewayIndex 		.1.3.6.1.4.1.12356.112.8.3.1.1.1.1
+ fadcGatewayName 		.1.3.6.1.4.1.12356.112.8.3.1.1.1.2
+ fadcGatewayHCStatus 		.1.3.6.1.4.1.12356.112.8.3.1.1.1.3
+ fadcGatewayInboundBandWidth 		.1.3.6.1.4.1.12356.112.8.3.1.1.1.4
+ fadcGatewayOutboundBandWidth 		.1.3.6.1.4.1.12356.112.8.3.1.1.1.5
+ fadcGatewayVdom 		.1.3.6.1.4.1.12356.112.8.3.1.1.1.6
+ fadcLinkGroupTables		.1.3.6.1.4.1.12356.112.8.3.2
+ fadcLinkGroupTable 		.1.3.6.1.4.1.12356.112.8.3.2.1
+ fadcLinkGroupEntry 		.1.3.6.1.4.1.12356.112.8.3.2.1.1
+ fadcLinkGroupIndex 		.1.3.6.1.4.1.12356.112.8.3.2.1.1.1
+ fadcLinkGroupName 		.1.3.6.1.4.1.12356.112.8.3.2.1.1.2
+ fadcLinkGroupHCStatus 		.1.3.6.1.4.1.12356.112.8.3.2.1.1.3
+ fadcLinkGroupMode 		.1.3.6.1.4.1.12356.112.8.3.2.1.1.4
+ fadcLinkGroupVdom 		.1.3.6.1.4.1.12356.112.8.3.2.1.1.5
+ fadcGlobalLoadBalance		.1.3.6.1.4.1.12356.112.8.4
+ fadcGLBVSTables		.1.3.6.1.4.1.12356.112.8.4.1
+ fadcGLBVSTable 		.1.3.6.1.4.1.12356.112.8.4.1.1
+ fadcGLBVSEntry 		.1.3.6.1.4.1.12356.112.8.4.1.1.1
+ fadcGLBVSIndex 		.1.3.6.1.4.1.12356.112.8.4.1.1.1.1
+ fadcGLBVSName 		.1.3.6.1.4.1.12356.112.8.4.1.1.1.2
+ fadcGLBVSStatus 		.1.3.6.1.4.1.12356.112.8.4.1.1.1.3
+ fadcGLBVSServerName 		.1.3.6.1.4.1.12356.112.8.4.1.1.1.4
+ fadcGLBVSVdom 		.1.3.6.1.4.1.12356.112.8.4.1.1.1.5
+ fadcGLBServerTables		.1.3.6.1.4.1.12356.112.8.4.2
+ fadcGLBServerTable 		.1.3.6.1.4.1.12356.112.8.4.2.1
+ fadcGLBServerEntry 		.1.3.6.1.4.1.12356.112.8.4.2.1.1
+ fadcGLBServerIndex 		.1.3.6.1.4.1.12356.112.8.4.2.1.1.1
+ fadcGLBServerName 		.1.3.6.1.4.1.12356.112.8.4.2.1.1.2
+ fadcGLBServerStatus 		.1.3.6.1.4.1.12356.112.8.4.2.1.1.3
+ fadcGLBServerVdom 		.1.3.6.1.4.1.12356.112.8.4.2.1.1.4
+ fadcGLBGatewayTables		.1.3.6.1.4.1.12356.112.8.4.3
+ fadcGLBGatewayTable 		.1.3.6.1.4.1.12356.112.8.4.3.1
+ fadcGLBGatewayEntry 		.1.3.6.1.4.1.12356.112.8.4.3.1.1
+ fadcGLBGatewayIndex 		.1.3.6.1.4.1.12356.112.8.4.3.1.1.1
+ fadcGLBGatewayName 		.1.3.6.1.4.1.12356.112.8.4.3.1.1.2
+ fadcGLBGatewayStatus 		.1.3.6.1.4.1.12356.112.8.4.3.1.1.3
+ fadcGLBGatewayServerName 		.1.3.6.1.4.1.12356.112.8.4.3.1.1.4
+ fadcGLBGatewayVdom 		.1.3.6.1.4.1.12356.112.8.4.3.1.1.5
+ fadcServerLoadBalance		.1.3.6.1.4.1.12356.112.8.5
+ fadcClientSideCPS 		.1.3.6.1.4.1.12356.112.8.5.1
+ fadcClientSideRPS 		.1.3.6.1.4.1.12356.112.8.5.2
+ fadcClientSSLCacheUtilizationTables		.1.3.6.1.4.1.12356.112.8.5.20
+ fadcClientSSLCacheUtilizationTable 		.1.3.6.1.4.1.12356.112.8.5.20.1
+ fadcClientSSLCacheUtilizationEntry 		.1.3.6.1.4.1.12356.112.8.5.20.1.1
+ fadcSLBVSIndex 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.1
+ fadcSLBHitCertTotalCheck 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.10
+ fadcSLBHitCertPercentage 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.11
+ fadcSLBVSName 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.2
+ fadcSLBTotalCacheItems 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.3
+ fadcSLBTotalCacheSize 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.4
+ fadcSLBCacheHitCount 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.5
+ fadcSLBCacheHitBytes 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.6
+ fadcSLBTatalCertCacheItems 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.7
+ fadcSLBTotalCertCacheSize 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.8
+ fadcSLBHitCertCacheCount 		.1.3.6.1.4.1.12356.112.8.5.20.1.1.9
+ fadcClientSideSSLCPS 		.1.3.6.1.4.1.12356.112.8.5.3
+ fadcClientSideSSLRPS 		.1.3.6.1.4.1.12356.112.8.5.4
+ fadcClientSideThroughput 		.1.3.6.1.4.1.12356.112.8.5.5
+ fadcClientSideSSLThroughput 		.1.3.6.1.4.1.12356.112.8.5.6
+ fadcConcurrentClientSideConnections 		.1.3.6.1.4.1.12356.112.8.5.7
+ fadcConcurrentClientSideSSLSessions 		.1.3.6.1.4.1.12356.112.8.5.8
