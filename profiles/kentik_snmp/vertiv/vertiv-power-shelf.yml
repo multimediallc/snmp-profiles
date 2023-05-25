@@ -55,8 +55,8 @@ metrics:
 
   - MIB: EES-POWER-MIB
     table:
-      - OID: 1.3.6.1.4.1.6302.3.1.21
-        name: rectDetailedDataTable
+      OID: 1.3.6.1.4.1.6302.3.1.21
+      name: rectDetailedDataTable
     symbols:
       - OID: 1.3.6.1.4.1.6302.3.1.21.1.2
         name: rectRectifierState
@@ -106,16 +106,16 @@ metrics:
         description: "Incoming AC Current (A)"
     metric_tags:
       - column:
-          - OID: 1.3.6.1.4.1.6302.3.1.21.1.1
-            name: rectIndex
+          OID: 1.3.6.1.4.1.6302.3.1.21.1.1
+          name: rectIndex
       - column:
-          - OID: 1.3.6.1.4.1.6302.3.1.21.1.13
-            name: rectRectifierModel
-            description: "The manufacturers model number of the module."
+          OID: 1.3.6.1.4.1.6302.3.1.21.1.13
+          name: rectRectifierModel
+          description: "The manufacturers model number of the module."
       - column:
-          - OID: 1.3.6.1.4.1.6302.3.1.21.1.14
-            name: rectRectifierSerialNumber
-            description: "The manufacturers serial number of the module."
+          OID: 1.3.6.1.4.1.6302.3.1.21.1.14
+          name: rectRectifierSerialNumber
+          description: "The manufacturers serial number of the module."
 #      - column:
 #        - OID: 1.3.6.1.4.1.6302.3.1.21.1.20
 #          name: rectRectifierSerialNumber
