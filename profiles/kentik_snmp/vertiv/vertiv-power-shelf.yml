@@ -17,8 +17,8 @@ metrics:
           normal: 1
           alarmed: 2
       # Battery charge %
-#      - OID: 1.3.6.1.4.1.6302.3.1.3.2.0
-#        name: statusBatteryStateOfCharge
+      - OID: 1.3.6.1.4.1.6302.3.1.3.2.0
+        name: statusBatteryStateOfCharge
       - OID: 1.3.6.1.4.1.6302.3.1.3.3.0
         name: statusACStatus
         enum:
@@ -33,97 +33,97 @@ metrics:
       - OID: 1.3.6.1.4.1.6302.3.1.3.7.0
         name: statusShelfOutputPower
       - OID: 1.3.6.1.4.1.6302.3.1.3.8.0
-#        name: statusBatteryHoldUp
-#      - OID: 1.3.6.1.4.1.6302.3.1.3.9.0
-#        name: statusTimeToCharge
-#
-#  - MIB: EES-POWER-MIB
-#    symbols:
-#      - OID: 1.3.6.1.4.1.6302.3.1.5.1.0
-#        name: configNumRectifiers
-#      - OID: 1.3.6.1.4.1.6302.3.1.5.2.0
-#        name: configNumRedundantRectifiers
-#      - OID: 1.3.6.1.4.1.6302.3.1.5.3.0
-#        name: configNumBattery
-#      - OID: 1.3.6.1.4.1.6302.3.1.5.4.0
-#        name: configRectifierOutputVoltageSetpoint
-#      - OID: 1.3.6.1.4.1.6302.3.1.5.5.0
-#        name: configRectifierTotalCurrLimit
-#      - OID: 1.3.6.1.4.1.6302.3.1.5.7.0
-#        name: configSystemTime
-#
-#
-#  - MIB: EES-POWER-MIB
-#    table:
-#      OID: 1.3.6.1.4.1.6302.3.1.21
-#      name: rectDetailedDataTable
-#    symbols:
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.2
-#        name: rectRectifierState
-#        enum:
-#          enabled: 0
-#          disabled: 1
-#          failed: 2
-#          missing: 3
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.3
-#        name: rectIncomingACVoltage
-#        description: "Incoming AC Voltage (V)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.4
-#        name: rectOutputVoltage
-#        description: "Output DC voltage (mV)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.5
-#        name: rectOutputVoltage
-#        description: "Output DC current (A)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.6
-#        name: rectOutputPower
-#        description: "Output DC power (W)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.7
-#        name: rectTemperature
-#        description: "Temperature (degrees C)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.8
-#        name: rectACStatus
-#        enum:
-#          on: 0
-#          off: 1
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.9
-#        name: rectDCStatus
-#        enum:
-#          on: 0
-#          off: 1
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.10
-#        name: rectRunningTime
-#        description: "Running time (hours)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.11
-#        name: rectFanOK
-#        enum:
-#          on: 0
-#          off: 1
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.12
-#        name: rectRatedOutput
-#        description: "Rated output (W)"
-#      - OID: 1.3.6.1.4.1.6302.3.1.21.1.19
-#        name: rectIncomingACCurrent
-#        description: "Incoming AC Current (A)"
-#    metric_tags:
+        name: statusBatteryHoldUp
+      - OID: 1.3.6.1.4.1.6302.3.1.3.9.0
+        name: statusTimeToCharge
+
+  - MIB: EES-POWER-MIB
+    symbols:
+      - OID: 1.3.6.1.4.1.6302.3.1.5.1.0
+        name: configNumRectifiers
+      - OID: 1.3.6.1.4.1.6302.3.1.5.2.0
+        name: configNumRedundantRectifiers
+      - OID: 1.3.6.1.4.1.6302.3.1.5.3.0
+        name: configNumBattery
+      - OID: 1.3.6.1.4.1.6302.3.1.5.4.0
+        name: configRectifierOutputVoltageSetpoint
+      - OID: 1.3.6.1.4.1.6302.3.1.5.5.0
+        name: configRectifierTotalCurrLimit
+      - OID: 1.3.6.1.4.1.6302.3.1.5.7.0
+        name: configSystemTime
+
+
+  - MIB: EES-POWER-MIB
+    table:
+      OID: 1.3.6.1.4.1.6302.3.1.21
+      name: rectDetailedDataTable
+    symbols:
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.2
+        name: rectRectifierState
+        enum:
+          enabled: 0
+          disabled: 1
+          failed: 2
+          missing: 3
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.3
+        name: rectIncomingACVoltage
+        description: "Incoming AC Voltage (V)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.4
+        name: rectOutputVoltage
+        description: "Output DC voltage (mV)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.5
+        name: rectOutputVoltage
+        description: "Output DC current (A)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.6
+        name: rectOutputPower
+        description: "Output DC power (W)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.7
+        name: rectTemperature
+        description: "Temperature (degrees C)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.8
+        name: rectACStatus
+        enum:
+          on: 0
+          off: 1
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.9
+        name: rectDCStatus
+        enum:
+          on: 0
+          off: 1
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.10
+        name: rectRunningTime
+        description: "Running time (hours)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.11
+        name: rectFanOK
+        enum:
+          on: 0
+          off: 1
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.12
+        name: rectRatedOutput
+        description: "Rated output (W)"
+      - OID: 1.3.6.1.4.1.6302.3.1.21.1.19
+        name: rectIncomingACCurrent
+        description: "Incoming AC Current (A)"
+    metric_tags:
+      - column:
+          OID: 1.3.6.1.4.1.6302.3.1.21.1.1
+          name: rectIndex
+      - column:
+          OID: 1.3.6.1.4.1.6302.3.1.21.1.13
+          name: rectRectifierModel
+          description: "The manufacturers model number of the module."
+      - column:
+          OID: 1.3.6.1.4.1.6302.3.1.21.1.14
+          name: rectRectifierSerialNumber
+          description: "The manufacturers serial number of the module."
 #      - column:
-#          OID: 1.3.6.1.4.1.6302.3.1.21.1.1
-#          name: rectIndex
-#      - column:
-#          OID: 1.3.6.1.4.1.6302.3.1.21.1.13
-#          name: rectRectifierModel
-#          description: "The manufacturers model number of the module."
-#      - column:
-#          OID: 1.3.6.1.4.1.6302.3.1.21.1.14
+#        - OID: 1.3.6.1.4.1.6302.3.1.21.1.20
 #          name: rectRectifierSerialNumber
-#          description: "The manufacturers serial number of the module."
-##      - column:
-##        - OID: 1.3.6.1.4.1.6302.3.1.21.1.20
-##          name: rectRectifierSerialNumber
-##          description: "Hardware version number, in the form cxx."
-##      - column:
-##        - OID: 1.3.6.1.4.1.6302.3.1.21.1.21
-##          name: rectRectifierSerialNumber
-##          description: "Software version number, in the form x.yy."
+#          description: "Hardware version number, in the form cxx."
+#      - column:
+#        - OID: 1.3.6.1.4.1.6302.3.1.21.1.21
+#          name: rectRectifierSerialNumber
+#          description: "Software version number, in the form x.yy."
 
 metric_tags:
   - column:
@@ -132,3 +132,4 @@ metric_tags:
   - column:
       OID: 1.3.6.1.4.1.6302.3.1.1.2.0
       name: identSerialNumber
+      tag: serial_number
